@@ -46,7 +46,7 @@ class HTTPHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write('404 Not Found'.encode())
+            self.wfile.write('404 Not Found'.encode('utf-8'))
 
 if __name__ == '__main__':
     """Server initialization"""
