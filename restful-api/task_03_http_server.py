@@ -43,9 +43,10 @@ class HTTPHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode('utf-8'))
 
         else:
-            self._set_headers(status=404, content_type='text/plain')
-            self.wfile.write(b"404 Not Found")
-
+            self.send_response(404)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"Not Found")
 
 if __name__ == '__main__':
     """Server initialization"""
