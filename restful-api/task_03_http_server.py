@@ -50,7 +50,7 @@ class HTTPHandler(http.server.BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     """Server initialization"""
-    server_address = ('172.0.0.1', 8000)
+    server_address = ('http://localhost', 8000)
     httpserver = http.server.HTTPServer(server_address, HTTPHandler)
     print("Server running at http://localhost:8000")
     httpserver.serve_forever()
