@@ -48,9 +48,8 @@ class HTTPHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write('404 Not Found'.encode('utf-8'))
 
-if __name__ == '__main__':
-    """Server initialization"""
-    server_address = ("("127.0.0.1", 8000)
+
+if __name__ == "__main__":
+    server_address = ("127.0.0.1", 8000)
     httpserver = http.server.HTTPServer(server_address, HTTPHandler)
-    print("Server running at http://localhost:8000")
     httpserver.serve_forever()
